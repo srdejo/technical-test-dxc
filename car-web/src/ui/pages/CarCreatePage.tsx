@@ -61,17 +61,17 @@ function CarCreatePage() {
       <h2 className="text-xl font-bold mb-4">Registrar Nuevo Auto</h2>
       {error && <p className="text-red-500 mb-3">{error}</p>}
       <form onSubmit={handleSubmit} className="space-y-4">
-        <input className="input-field" type="text" name="brand" value={carData.brand} onChange={handleChange} placeholder="Marca" required />
-        <input className="input-field" type="text" name="model" value={carData.model} onChange={handleChange} placeholder="Modelo" required />
-        <input className="input-field" type="text" name="year" value={carData.year} onChange={handleChange} placeholder="Año" required />
-        <input className="input-field" type="text" name="licensePlate" value={carData.licensePlate} onChange={handleChange} placeholder="Número de Placa" required />
-        <input className="input-field" type="text" name="color" value={carData.color} onChange={handleChange} placeholder="Color" required />
-        <input className="input-field" type="file" accept="image/*" onChange={handleFileChange} />
-        <div className="flex justify-between">
-          <button type="button" className="btn-secondary" onClick={() => navigate("/cars")}>
+        <input className="border border-gray-300 rounded-lg px-4 py-2 w-full focus:ring-2 focus:ring-blue-500" type="text" name="brand" value={carData.brand} onChange={handleChange} placeholder="Marca" required />
+        <input className="border border-gray-300 rounded-lg px-4 py-2 w-full focus:ring-2 focus:ring-blue-500" type="text" name="model" value={carData.model} onChange={handleChange} placeholder="Modelo" required />
+        <input className="border border-gray-300 rounded-lg px-4 py-2 w-full focus:ring-2 focus:ring-blue-500" type="text" name="year" value={carData.year} onChange={handleChange} placeholder="Año" required />
+        <input className="border border-gray-300 rounded-lg px-4 py-2 w-full focus:ring-2 focus:ring-blue-500" type="text" name="licensePlate" value={carData.licensePlate} onChange={handleChange} placeholder="Número de Placa" required />
+        <input className="border border-gray-300 rounded-lg px-4 py-2 w-full focus:ring-2 focus:ring-blue-500" type="text" name="color" value={carData.color} onChange={handleChange} placeholder="Color" required />
+        <input className="border border-gray-300 rounded-lg px-4 py-2 w-full focus:ring-2 focus:ring-blue-500" type="file" accept="image/*" onChange={handleFileChange} />
+        <div className="flex justify-end gap-2">
+          <button type="button" className="bg-gray-300 text-white px-4 py-2 rounded-lg hover:bg-gray-500 transition" onClick={() => navigate("/cars")}>
             Cancelar
           </button>
-          <button type="submit" className="btn-primary" disabled={loading}>
+          <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition" disabled={loading}>
             {loading ? "Guardando..." : "Guardar Auto"}
           </button>
         </div>

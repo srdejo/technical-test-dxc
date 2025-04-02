@@ -1,0 +1,244 @@
+{
+	"info": {
+		"_postman_id": "edb2c97a-0130-4d4c-a346-ea9312f745f9",
+		"name": "CarManager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37833547"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"usuario\": \"srdejo\",\r\n    \"clave\": \"clave2025\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save car",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzcmRlam8iLCJpYXQiOjE3NDM1NTcyODMsImV4cCI6MTc0MzU2MDg4M30.GyhlE1ohE-6NddJjtFBqdqj2wp635af77mVHayTbTEI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"marca\": \"Renault\",\r\n    \"ano\": \"2025\",\r\n    \"color\": \"Blanco\",\r\n    \"modelo\": \"2026\",\r\n    \"placa\": \"CWV742\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/car",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"car"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get cars",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzcmRlam8iLCJpYXQiOjE3NDM2MDYyMjQsImV4cCI6MTc0MzYwOTgyNH0.m7DN0PvSdRj8kJ6oFsw9N8HAEPwxwTsn98Fp0W6-mNU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/car",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"car"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get car",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzcmRlam8iLCJpYXQiOjE3NDM1NTcyODMsImV4cCI6MTc0MzU2MDg4M30.GyhlE1ohE-6NddJjtFBqdqj2wp635af77mVHayTbTEI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/car/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"car",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update car",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzcmRlam8iLCJpYXQiOjE3NDM1NTcyODMsImV4cCI6MTc0MzU2MDg4M30.GyhlE1ohE-6NddJjtFBqdqj2wp635af77mVHayTbTEI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"marca\": \"Renault\",\r\n    \"ano\": \"2026\",\r\n    \"color\": \"Blanco\",\r\n    \"modelo\": \"2026\",\r\n    \"placa\": \"CWV742\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/car/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"car",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete car",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzcmRlam8iLCJpYXQiOjE3NDM1NTcyODMsImV4cCI6MTc0MzU2MDg4M30.GyhlE1ohE-6NddJjtFBqdqj2wp635af77mVHayTbTEI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/car/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"car",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
