@@ -13,6 +13,34 @@ services:
       - backend
     volumes:
       - sqlserver-data:/var/opt/mssql
+    expose:
+      - "1433"  # Expone el puerto solo en la red interna
+
+  car-api:
+    build: ./car-api
+    container_name: car-api
+    restart: always
+    depends_on:
+      - sqlserver
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:sqlserver://sqlserver:1433;databaseName=car_db;encrypt=false;trustServerCertificate=true
+      - SPRING_DATASOURCE_USERNAME=sa
+      - SPRING_DATASOURCE_PASSWORD=YourStrong!Passw0rd
+    networks:
+      - backend
+
+  car-web:
+    build: ./car-web
+    container_name: car-web
+    restart: always
+    depends_on:
+      - car-api
+    ports:
+      - "3000:3000"
+    networks:
+      - backend
 
 networks:
   backend:

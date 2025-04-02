@@ -110,14 +110,14 @@ const CarEditPage = () => {
                 <div className="flex justify-end gap-2">
                     <button
                         type="button"
-                        className="px-4 py-2 bg-gray-300 text-black rounded"
+                        className="px-4 py-2 bg-gray-300 text-black rounded hover:bg-gray-500 transition"
                         onClick={() => navigate("/cars")}
                     >
                         Cancelar
                     </button>
                     <button
                         type="submit"
-                        className="px-4 py-2 bg-blue-500 text-white rounded"
+                        className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 transition"
                         disabled={loading}
                     >
                         {loading ? "Guardando..." : "Actualizar Auto"}
