@@ -1,6 +1,7 @@
 package co.srdejo.car.infrastructure.controller;
 
 import co.srdejo.car.application.dto.CarDto;
+import co.srdejo.car.application.dto.CarDtoResponse;
 import co.srdejo.car.domain.service.CarService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +18,7 @@ public class CarController {
     }
 
     @GetMapping()
-    public List<CarDto> getCars() {
+    public List<CarDtoResponse> getCars() {
         return carService.getAllCars();
     }
 
