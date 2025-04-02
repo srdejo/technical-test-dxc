@@ -1,6 +1,7 @@
 package co.srdejo.car.application.service;
 
 import co.srdejo.car.application.dto.CarDto;
+import co.srdejo.car.application.dto.CarDtoResponse;
 import co.srdejo.car.application.mapper.CarMapper;
 import co.srdejo.car.domain.exception.CarNotFoundException;
 import co.srdejo.car.domain.exception.UnauthorizedAccessException;
@@ -38,16 +39,15 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public List<CarDto> getAllCars() {
-        return CarMapper.toDtoList(carRepository.findByUser(authService.getUser()));
+    public List<CarDtoResponse> getAllCars() {
+        return CarMapper.toDtoResponseList(carRepository.findByUser(authService.getUser()));
     }
 
     @Override
     public CarDto updateCarDto(long id, CarDto carDto) {
         CarEntity carEntity = findCarById(id);
-        Car car = CarMapper.toDomain(carEntity);
-        car.update(carDto);
-        return CarMapper.toDto(carRepository.save(CarMapper.toEntity(car)));
+        carEntity.update(carDto);
+        return CarMapper.toDto(carRepository.save(carEntity));
     }
 
     @Override

@@ -1,6 +1,7 @@
 package co.srdejo.car.application.mapper;
 
 import co.srdejo.car.application.dto.CarDto;
+import co.srdejo.car.application.dto.CarDtoResponse;
 import co.srdejo.car.domain.model.Car;
 import co.srdejo.car.infrastructure.entity.CarEntity;
 
@@ -54,7 +55,16 @@ public class CarMapper {
         return dto;
     }
 
-
+    public static CarDtoResponse toDtoResponse(CarEntity entity) {
+        CarDtoResponse dto = new CarDtoResponse();
+        dto.setId(entity.getId().toString());
+        dto.setBrand(entity.getBrand());
+        dto.setModel(entity.getModel());
+        dto.setYear(entity.getYear());
+        dto.setLicensePlate(entity.getLicensePlate());
+        dto.setColor(entity.getColor());
+        return dto;
+    }
 
     public static List<CarDto> toDtoList(Iterable<CarEntity> cars) {
         if (cars == null) {
@@ -63,6 +73,16 @@ public class CarMapper {
 
         return ((List<CarEntity>) cars).stream()
                 .map(CarMapper::toDto)
+                .collect(Collectors.toList());
+    }
+
+    public static List<CarDtoResponse> toDtoResponseList(Iterable<CarEntity> cars) {
+        if (cars == null) {
+            return List.of();
+        }
+
+        return ((List<CarEntity>) cars).stream()
+                .map(CarMapper::toDtoResponse)
                 .collect(Collectors.toList());
     }
 }

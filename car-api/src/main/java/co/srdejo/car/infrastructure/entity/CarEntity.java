@@ -1,6 +1,7 @@
 package co.srdejo.car.infrastructure.entity;
 
 
+import co.srdejo.car.application.dto.CarDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -28,4 +29,13 @@ public class CarEntity {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private UserEntity user;
+
+
+    public void update(CarDto carDto) {
+        this.brand = carDto.getBrand() != null ? carDto.getBrand() : this.brand;
+        this.model = carDto.getModel() != null ? carDto.getModel() : this.model;
+        this.year = carDto.getYear() > 0 ? carDto.getYear() : this.year;
+        this.licensePlate = carDto.getLicensePlate() != null ? carDto.getLicensePlate() : this.licensePlate;
+        this.color = carDto.getColor() != null ? carDto.getColor() : this.color;
+    }
 }

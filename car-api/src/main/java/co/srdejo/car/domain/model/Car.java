@@ -1,6 +1,5 @@
 package co.srdejo.car.domain.model;
 
-import co.srdejo.car.application.dto.CarDto;
 import co.srdejo.car.domain.exception.InvalidCarDataException;
 import co.srdejo.car.infrastructure.entity.UserEntity;
 import lombok.Getter;
@@ -39,16 +38,6 @@ public class Car {
             throw new InvalidCarDataException("El propietario no puede ser nulo.");
         }
         this.owner = owner;
-    }
-
-    public void update(CarDto carDto) {
-        new Car(
-                carDto.getBrand() != null ? carDto.getBrand() : this.brand,
-                carDto.getModel() != null ? carDto.getModel() : this.model,
-                carDto.getYear() > 0 ? carDto.getYear() : this.year,
-                carDto.getLicensePlate() != null ? carDto.getLicensePlate() : this.licensePlate,
-                carDto.getColor() != null ? carDto.getColor() : this.color
-        );
     }
 
 }
