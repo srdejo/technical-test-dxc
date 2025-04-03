@@ -2,7 +2,7 @@
 
 Este proyecto incluye dos aplicaciones:
 - **Car API**: Una API en Spring Boot conectada a una base de datos SQL Server.
-- **Car Web**: Una aplicación en Next.js como frontend.
+- **Car Web**: Una aplicación en React como frontend.
 
 Ambas aplicaciones están contenidas y orquestadas con Docker Compose.
 
