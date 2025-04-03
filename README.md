@@ -69,6 +69,11 @@ La aplicación frontend estará disponible en:
 http://localhost:3000
 ```
 
+## 📌 Credenciales de Acceso  
+El sistema tiene dos usuarios precargados para pruebas:  
+
+- **Usuario:** `user1` / **Contraseña:** `password123`  
+- **Usuario:** `user2` / **Contraseña:** `password456`
 ---
 
 ## 🛑 Detener los Contenedores
