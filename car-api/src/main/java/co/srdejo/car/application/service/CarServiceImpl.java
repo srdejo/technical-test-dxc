@@ -45,6 +45,7 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public CarDto updateCarDto(long id, CarDto carDto) {
+        CarMapper.toDomain(carDto); // validation data
         CarEntity carEntity = findCarById(id);
         carEntity.update(carDto);
         return CarMapper.toDto(carRepository.save(carEntity));

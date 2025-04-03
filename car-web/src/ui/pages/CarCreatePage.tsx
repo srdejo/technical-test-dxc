@@ -50,7 +50,8 @@ function CarCreatePage() {
       await carService.createCar(carData);
       navigate("/cars");
     } catch (err: any) {
-      setError(err.response?.data?.message || "Error al registrar el auto");
+      console.log(err.response)
+      setError(err.response?.data?.error || "Error al registrar el auto");
     } finally {
       setLoading(false);
     }
