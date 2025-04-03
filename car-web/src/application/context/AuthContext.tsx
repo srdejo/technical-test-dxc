@@ -64,6 +64,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         authService.logout();
         setCurrentUser(null);
         setIsAuthenticated(false);
+        window.location.reload();
     };
 
     return (
