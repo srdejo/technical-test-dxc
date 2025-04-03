@@ -1,6 +1,6 @@
-package co.srdejo.car.infrastructure.repository;
+package co.srdejo.car.infrastructure.persistence.repository;
 
-import co.srdejo.car.infrastructure.entity.UserEntity;
+import co.srdejo.car.infrastructure.persistence.entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

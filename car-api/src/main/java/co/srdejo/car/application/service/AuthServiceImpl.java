@@ -3,8 +3,8 @@ package co.srdejo.car.application.service;
 import co.srdejo.car.application.dto.UserDto;
 import co.srdejo.car.domain.exception.AuthenticationException;
 import co.srdejo.car.domain.service.AuthService;
-import co.srdejo.car.infrastructure.entity.UserEntity;
-import co.srdejo.car.infrastructure.repository.UserRepository;
+import co.srdejo.car.infrastructure.persistence.entity.UserEntity;
+import co.srdejo.car.infrastructure.persistence.repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 

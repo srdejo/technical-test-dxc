@@ -8,8 +8,8 @@ import co.srdejo.car.domain.exception.UnauthorizedAccessException;
 import co.srdejo.car.domain.model.Car;
 import co.srdejo.car.domain.service.AuthService;
 import co.srdejo.car.domain.service.CarService;
-import co.srdejo.car.infrastructure.entity.CarEntity;
-import co.srdejo.car.infrastructure.repository.CarRepository;
+import co.srdejo.car.infrastructure.persistence.entity.CarEntity;
+import co.srdejo.car.infrastructure.persistence.repository.CarRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -45,6 +45,7 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public CarDto updateCarDto(long id, CarDto carDto) {
+        CarMapper.toDomain(carDto); // validation data
         CarEntity carEntity = findCarById(id);
         carEntity.update(carDto);
         return CarMapper.toDto(carRepository.save(carEntity));

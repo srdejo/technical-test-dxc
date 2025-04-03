@@ -49,8 +49,8 @@ const CarEditPage = () => {
         try {
             await carService.updateCar(id, carData);
             navigate("/cars");
-        } catch (err) {
-            setError("Error al actualizar el auto.");
+        } catch (err: any) {
+            setError(err.response?.data?.error || "Error al actualizar el auto");
         } finally {
             setLoading(false);
         }

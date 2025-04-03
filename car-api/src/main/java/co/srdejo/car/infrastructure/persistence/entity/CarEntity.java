@@ -1,4 +1,4 @@
-package co.srdejo.car.infrastructure.entity;
+package co.srdejo.car.infrastructure.persistence.entity;
 
 
 import co.srdejo.car.application.dto.CarDto;

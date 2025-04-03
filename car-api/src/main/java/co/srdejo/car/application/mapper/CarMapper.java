@@ -3,7 +3,7 @@ package co.srdejo.car.application.mapper;
 import co.srdejo.car.application.dto.CarDto;
 import co.srdejo.car.application.dto.CarDtoResponse;
 import co.srdejo.car.domain.model.Car;
-import co.srdejo.car.infrastructure.entity.CarEntity;
+import co.srdejo.car.infrastructure.persistence.entity.CarEntity;
 
 import java.util.List;
 import java.util.stream.Collectors;
