@@ -1,7 +1,7 @@
 package co.srdejo.car.domain.model;
 
 import co.srdejo.car.domain.exception.InvalidCarDataException;
-import co.srdejo.car.infrastructure.entity.UserEntity;
+import co.srdejo.car.infrastructure.persistence.entity.UserEntity;
 import lombok.Getter;
 
 import java.time.LocalDate;

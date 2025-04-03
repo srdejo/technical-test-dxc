@@ -1,4 +1,4 @@
-package co.srdejo.car.infrastructure.entity;
+package co.srdejo.car.infrastructure.persistence.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
