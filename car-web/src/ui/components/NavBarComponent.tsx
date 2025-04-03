@@ -14,6 +14,7 @@ function NavBarComponent() {
     const { currentUser, isAuthenticated, logout } = authContext;
   
     const handleLogout = () => {
+        logout();
         navigate('/login');
     };
 
