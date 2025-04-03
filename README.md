@@ -27,7 +27,7 @@ docker-compose up --build -d
 Esto ejecutará:
 - `sqlserver`: Base de datos SQL Server.
 - `car-api`: API en Spring Boot.
-- `car-web`: Frontend en Next.js.
+- `car-web`: Frontend en React.
 
 ---
 
